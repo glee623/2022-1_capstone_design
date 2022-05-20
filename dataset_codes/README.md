@@ -1,10 +1,10 @@
 # YOLO 데이터셋 수집 코드
 
-<p align="center"><img src="img/mediapipe_log.jpg"><\p>
+<p align="center"><img src="img/mediapipe_logo.jpg">
 
 MediaPipe란 Google에서 제공하는 AI frame work로, 다음과 같은 랜드마크를 통해 손의 위치를 감지하는 역할을 한다.
 
-<p align="center"><img src="img/hand_landmarks.png"><\p>
+<p align="center"><img src="img/hand_landmarks.png">
 
 해당 frame work를 통해 네모 박스로서 감지된 손의 영역을 검출 하고,  검출 영역의 좌표를 이용하여 YOLO 학습 데이터를 구성하였다.
 
