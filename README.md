@@ -9,15 +9,15 @@
 ## Contents
 1. [Introduce](#🌱_청각장애인들을_위한_비대면_교육_플랫폼_개발)
 2. [Team](#Team)
-3. [Install](# Install)
+3. [Install](#Install)
 4. [Requirements](#Requirements)
 5. [Technology Stack](#Technology_Stack)
 6. [Deep Learning](#DeepLearning-Model)
-    - [Custom dataset](#Custom dataset)
+    - [Custom dataset](#Custom_dataset)
     - [Model & Hyper Parameters](#Model_&_Hyper_Parameters)
     - [Training](#Training)
     - [Result](#Result)
-4. [Full Stack](#Full Stack)
+4. [FullStack](#Full_Stack)
     - [Front-End](#Front-End)
     - [Back-End](#Back-End)     
 
