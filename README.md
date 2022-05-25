@@ -66,10 +66,10 @@
 
 |Name|Department|Contact|
 |---|---|---|
-| Jung Hee Sun | Hallym Univ | glee623@naver.com|
-| Lee Ye Jin | Hallym Univ | leeye0616@naver.com|
-| Lee So Eun | Hallym Univ | dlth508@naver.com  |
-| Kim Gang Su | Hallym Univ | gangsu1813@naver.com|
+| Jung Hee Sun | Major of Bigdata | glee623@naver.com|
+| Lee Ye Jin | Major of Bigdata | leeye0616@naver.com|
+| Lee So Eun | Major of Bigdata | dlth508@naver.com  |
+| Kim Gang Su | Major of Bigdata | gangsu1813@naver.com|
 
 
 
@@ -87,7 +87,6 @@
 from http import server
 import re
 from socket import socket
-from turtle import delay
 from flask import Flask,render_template,request  # 서버 구현을 위한 Flask 객체 import 
 
 from numpy import broadcast  
@@ -126,7 +125,7 @@ conda install -c anaconda flask
 
 # Requirements
 
-`Pyhthon 3.7 ~ 3.9`
+`Python 3.7 ~ 3.9`
 
 `CUDA Version 11.2`
 
@@ -160,7 +159,7 @@ conda install -c anaconda flask
 
 [custom dataset 구축](https://github.com/yetniek/2022-1_capstone_design/tree/main/dataset_codes) 
 
-데이터 셋은 한국어 수화의 자음 14개, 모음 17개로 총 31개의 글자를 한 사람 당 50장씩 약 1,550장을 구축하였다. 총 다섯명의 인원이 데이터 셋을 수집하였고 data augmentation을 활용해 이미지를 약 3배 정도 늘려 **총 2만장** 정도의 데이터셋을 구축하였다. 또한, Vott를 활용하여 직접 라벨링 하였는데, 추가적인 데이터 셋을 구축할 때 Vott를 활용할 시 시간 소모가 커 라벨링을 자동화 시키기 위해 MediaPipe를 통해 손 부분에 바운딩 박스를 그려 마우스 클릭 시 해당 좌표를 저장하도록 설정해 데이터 라벨링을 진행하였다. 
+데이터 셋은 한국어 수화의 자음 14개, 모음 17개로 총 31개의 글자를 한 사람 당 50장씩 약 1,550장을 구축하였다. 총 다섯명의 인원이 데이터 셋을 수집하였고 data augmentation을 활용해 이미지를 약 3배 정도 늘려 **총 23,250장** 의 데이터셋을 구축하였다. 또한, Vott를 활용하여 직접 라벨링 하였는데, 추가적인 데이터 셋을 구축할 때 Vott를 활용할 시 시간 소모가 커 라벨링을 자동화 시키기 위해 MediaPipe를 통해 손 부분에 바운딩 박스를 그려 마우스 클릭 시 해당 좌표를 저장하도록 설정해 데이터 라벨링을 진행하였다. 
 
 
 
