@@ -7,14 +7,14 @@
 
 
 ## Contents
-1. [Introduce](#🌱 청각장애인들을 위한 비대면 교육 플랫폼 개발)
+1. [Introduce](#🌱_청각장애인들을_위한_비대면_교육_플랫폼_개발)
 2. [Team](#Team)
 3. [Install](# Install)
 4. [Requirements](#Requirements)
-5. [Technology Stack](#Technology Stack)
+5. [Technology Stack](#Technology_Stack)
 6. [Deep Learning](#DeepLearning-Model)
     - [Custom dataset](#Custom dataset)
-    - [Model & Hyper Parameters](#Model & Hyper Parameters)
+    - [Model & Hyper Parameters](#Model_&_Hyper_Parameters)
     - [Training](#Training)
     - [Result](#Result)
 4. [Full Stack](#Full Stack)
@@ -24,12 +24,12 @@
 8. [Demonstration](#Demonstration )
    - [Main-Page](#Main-Page)
    - [Sub-Page](#Sub-Page)     
-   - [Sign In & Sign Up](#Sign In & Sign Up)
-   - [Live - Chat Room](#Live - Chat Room)   
+   - [Sign In & Sign Up](#Sign_In_&_Sign_Up)
+   - [Live - Chat Room](#Live_-_Chat_Room)   
 9. [Timetable](#Timetable)
-10. [Design  document](#Design document)     
-11. [Test document](#Test document)
-12. [Weekly work diary](#Weekly work diary)   
+10. [Design  document](#Design_document)     
+11. [Test document](#Test_document)
+12. [Weekly work Report](#Weekly_work_Report)   
 
 
 
@@ -268,7 +268,7 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 
 
-## Weekly work diary
+## Weekly work Report
 
 이미지
 
