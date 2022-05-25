@@ -1,34 +1,270 @@
-# 2022-1_capstone_design
-2022학년도 1학기 캡스톤 디자인
 
-</br>
 
-**🌱 주제: 청각장애인들을 위한 비대면 교육 플랫폼 개발**
+# 청각장애인들을 위한 비대면 교육 플랫폼 개발
 
-* 과제 목적
+2022-1_capstone_design
 
-  : 2021년 3월, ’청각장애 학생들의 학습권을 보장해주세요.’라는 제목으로 올라온 국민청원은 총 955명의 동의를 얻었다. 3년째 이어지고 있는 코로나19 사태로 인해 대부분의 초, 중, 고 및 대학교는 대면 수업과 함께 온라인 수업이 병행되고 있다. 일반적인 대학교 온라인 강의의 경우 ZOOM이나 학교 자체 영상 강의 플랫폼을 이용하고 있다. 하지만 이러한 비대면 수업은 화면 속 교수자의 입 모양이 나오지 않거나, 강의자료만 띄워져 있는 경우가 대다수다. 장애인 차별 금지법 제14조는 교육책임자가 수어 통역, 문자통역(속기), 자막 등 의사소통 수단을 적극적으로 강구하고 제공해야 한다고 명시돼 있지만 이러한 지원은 시간적, 비용적 어려움으로 인해 수행되기 어려운 것이 현실이다. 따라서 이번 캡스톤 프로젝트를 통해 여러 교육 플랫폼에서 함께 사용될 수 있는 청각장애인용 인공지능 수화 번역, 통역기를 제작하는 것을 목표로 한다.
 
-  
 
-* 개발 목표
+## Contents
+1. [Introduce](🌱 청각장애인들을 위한 비대면 교육 플랫폼 개발)
+2. [Team](#Team)
+3. [Install](Install)
+4. [Requirements](Requirements)
+5. [Technology Stack](Technology Stack)
+6. [Deep Learning](DeepLearning-Model)
+    - [Custom dataset](Custom dataset)
+    - [Model & Hyper Parameters](#### Model & Hyper Parameters)
+    - [Training](#### Training)
+    - [Result](#### Result)
+4. [Full Stack](Full Stack)
+    - [Front-End](#### Front-End)
+    - [Back-End](#### Back-End)     
 
-  우리의 기술 개발은 총 세가지로 나뉜다.
+8. [Demonstration](Demonstration )
+   - [Main-Page](#### Main-Page)
+   - [Sub-Page](#### Sub-Page)     
+   - [Sign In & Sign Up](#### Sign In & Sign Up)
+   - [Live - Chat Room](#### Live - Chat Room)   
+9. [Timetable](## Timetable)
+10. [Design  document](## Design document)     
+11. [Test document](## Test document)
+12. [Weekly work diary](## Weekly work diary)   
 
-  1. 강의자 → 청각장애인
 
-     ![img1](https://user-images.githubusercontent.com/52689918/169866120-4b70f99c-a343-4b38-a6ec-8877952c3d8b.png)
 
-     첫번째, 실시간으로 강의자의 음성을 텍스트로 변환하여 화면으로 송출한다. 청각장애인들이 수업에 참여할 수 있도록 강의자의 말을 자막으로 띄우는 형식이다. 여기서 쓰이는 핵심 기술은 STT(Speech-to-Text)로, 사람이 말하는 음성 언어를 컴퓨터가 해석해 그 내용을 문자 데이터로 전환하는 처리를 말한다.
+### 🌱 청각장애인들을 위한 비대면 교육 플랫폼 개발
 
-     </br> 
+코로나 19 사태로 인해 대부분의 초·중·고교에서 대면 수업과 온라인 수업을 진행하고 있다. 일반적인 대학교의 온라인 강의는 ZOOM이나 학교 자체 동영상 강의 플랫폼을 활용한다. 그러나 비대면 수업은 대부분 강사의 입이 화면에 나타나지 않거나 강의자료만 표시된다. 장애인차별법 14조는 교육관리자가 수어통역, 문자통역, 자막 등 의사소통 수단을 적극 고안/제공하도록 규정하고 있지만, 시간과 비용상 어려움이 있어 이 같은 지원이 어렵다. 따라서 이번 캡스톤 프로젝트를 통해 **청각장애인을 위한 음성 및 수화 번역 교육 플랫폼**을 만드는 것을 목표로 하고 있다. 기술 개발은 크게 두 가지로 나뉜다.
 
-  2. 청각장애인 → 강의자
+1) 실시간 전송되는 강사의 음성이 텍스트로 변환되어 화면에 전송한다.
+2) 청각장애인의 수화를 텍스트로 변환해 화면에 전송한다. 
 
-     ![img2](https://user-images.githubusercontent.com/52689918/169866284-014fc279-7834-4b47-a9a0-0c06a5a8751c.png)
+이 기술들은 STT API를 사용하고(1) 객체 감지를 위해 직접 구축한 수화 데이터 세트와 Darknet YOLOv4를 사용하여 구현된다(2). 이를 통해 **강사와 청각장애인, 청각장애인과 강사가 원활한 의사소통이 되도록 하는 것**을 기대하는  바이다. 
 
-     두번째, 청각장애인의 수화를 실시간으로 감지하여 감지한 수화를 텍스트로 변환하여 화면으로 송출한다.  여기서 쓰이는 핵심 기술은 YOLO를 학습 시키기 위해 개발된 프레임 워크인 Darknet의 사용이다. Darknet은 속도면에서의 장점이 크다.
 
-     </br>
 
-  3. 웹페이지 구성
+### Differentiation
+
+기존의 화상 통화 플랫폼 중 가장 대중적인 ZOOM을 예로 들었을 때, 현재 ZOOM에서는 영어 자막만 지원하고 있으며 한국어는 지원하고 있지 않다. 또한, 수화 번역 기술이 없으며 해당 제품을 설치해야 화상통화에 참여가 가능하다. 본 프로젝트에서는 청각장애인 또한 활발하게 화상통화에 참여할 수 있도록 **수어 번역이 가능**하며, **실시간으로 한국어 자막을 제공**한다. 추가적으로 별다른 설치가 필요없이 참여 공간에 구애 받지 않고 **웹 브라우저에서 바로 구동이 가능**하며, **화상 플랫폼 내에서 파일 전송/다운이 가능**하다. 
+
+
+
+## Team
+
+시작은 시작이조 (The beginning is the beginning)
+
+|Name|Department|Contact|
+|---|---|---|
+| Jung Hee Sun | Hallym Univ | glee623@naver.com|
+| Lee Ye Jin | Hallym Univ | leeye0616@naver.com|
+| Lee So Eun | Hallym Univ | dlth508@naver.com  |
+| Kim Gang Su | Hallym Univ | gangsu1813@naver.com|
+
+
+
+## Coach
+
+|Name|Department|Contact|
+|---|---|---|
+| Hou Jong Uk | Hallym Univ(Prof.) | juhou@hallym.ac.kr
+
+
+
+## Install
+
+```
+from http import server
+import re
+from socket import socket
+from turtle import delay
+from flask import Flask,render_template,request  # 서버 구현을 위한 Flask 객체 import 
+
+from numpy import broadcast  
+
+from pyngrok import ngrok ,conf # 외부 접속 링크 생성
+from flask_socketio import SocketIO, join_room, emit
+import base64
+import cv2
+import numpy as np
+import io
+from PIL import Image
+from collections import deque
+
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR) 
+
+from requests import request
+
+import timeit
+import time
+from unicode import join_jamos
+import cProfile
+import re
+```
+
+
+
+```
+conda install -c conda-forge pyngrok  
+conda install -c conda-forge flask-socketio  
+conda install -c anaconda flask  
+```
+
+
+
+## Requirements
+
+`Pyhthon 3.7 ~ 3.9`
+
+`CUDA Version 11.2`
+
+`cuddn 7.6.5`
+
+`flask 2.0.3`
+
+`flask-socketio 5.1.0`
+
+`pyngrok 5.1.0`
+
+
+
+## Technology Stack
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
+
+#### Library
+
+<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/> <img src="https://img.shields.io/badge/socket.io-010101?style=flat-square&logo=socket.io&logoColor=white"/> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=WebRTC&logoColor=white"/> <img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/>
+
+#### API
+
+`STT` 
+
+
+
+## Deep Learning
+
+#### Custom dataset
+
+[custom dataset 구축](https://github.com/yetniek/2022-1_capstone_design/tree/main/dataset_codes) 
+
+데이터 셋은 한국어 수화의 자음 14개, 모음 17개로 총 31개의 글자를 한 사람 당 50장씩 약 1,550장을 구축하였다. 총 다섯명의 인원이 데이터 셋을 수집하였고 data augmentation을 활용해 이미지를 약 3배 정도 늘려 **총 2만장** 정도의 데이터셋을 구축하였다. 또한, Vott를 활용하여 직접 라벨링 하였는데, 추가적인 데이터 셋을 구축할 때 Vott를 활용할 시 시간 소모가 커 라벨링을 자동화 시키기 위해 MediaPipe를 통해 손 부분에 바운딩 박스를 그려 마우스 클릭 시 해당 좌표를 저장하도록 설정해 데이터 라벨링을 진행하였다. 
+
+
+
+![데이터셋](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\dataset_img.png)
+
+
+
+#### Model & Hyper Parameters 
+
+Darknet YOLOv4 사용
+
+
+
+#### Training
+
+설명<br>
+
+
+
+#### Result
+
+![성능](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\perform.png)
+
+
+
+## Full Stack
+
+More Details  [Sign-Language-Live-Chat](https://github.com/GangsuKim/sign-language-live-chat)
+
+#### Front-End
+
+설명<br>
+
+#### Back-End
+
+설명<br>
+
+
+
+## Demonstration 
+
+#### Main Page
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\main.png)
+
+
+
+메인 화면의 좌측 상단에는 플랫폼의 이름이 적혀있고, 우측 상단에는 회원가입과 로그인을 할 수 있는 버튼이 있다. '지금 바로 시작하기' 버튼을 누르면 좌측 하단의 `Room name` 과 `sign` 으로 포커스가 이동한다. 
+
+설명<br>
+
+
+
+#### Sub Page
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\sub.png)
+
+<br>
+
+#### Sign In & Sign Up
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\sign_in.png)
+
+​                                                                                       < 로그인 버튼을 누르면 나오는 화면 >
+
+<br>
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\sign_up.png)
+
+​                                                                                                < 회원가입 화면 >
+
+<br>
+
+#### Live - Chat Room
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\input_name.png)
+
+​                                                                                       < SIGN 버튼을 누르면 나오는 화면 >
+
+<br>
+
+
+
+
+
+![](C:\Users\LEEYEJIN\rep\2022-1_capstone_design\images\live-chat.png)
+
+
+
+화상 채팅 실행 화면이다. 좌측에 화상 캠이 송출되고 User의 카메라가 상단에 위치한다. 좌측 하단에 캠과 마이크를 ON/OFF 할 수 있는 기능이 있으며 오른쪽 마우스 클릭시 수어 통역 모드가 켜진다. 송출 화면 우측에는 번역된 수어가 나온다. 우측에는 사용자간의 채팅이 가능하고, 채팅 상단에 있는 클립 아이콘을 누르면 파일 전송/다운이 가능하다. 
+
+<br>
+
+
+
+## Timetable
+
+이미지
+
+
+
+## Design document
+
+이미지
+
+
+
+## Test document
+
+이미지
+
+
+
+## Weekly work diary
+
+이미지
+
