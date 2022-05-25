@@ -1,5 +1,7 @@
 
 
+
+
 # 청각장애인들을 위한 비대면 교육 플랫폼 개발
 
 2022-1_capstone_design
@@ -39,9 +41,11 @@
 
 
 
-<img src="./images/instructor_to_student.png" width="400" height="200"/>
+<img src="./images/instructor_to_student.png" width="30%"/>
 
-<img src="./images/student_to_instructor.png" width="400" height="200"/>
+<img src="./images/student_to_instructor.png" width="30%"/>
+
+
 
 1) 실시간 전송되는 강사의 음성이 텍스트로 변환되어 화면에 전송한다.
 2) 청각장애인의 수화를 텍스트로 변환해 화면에 전송한다. 
