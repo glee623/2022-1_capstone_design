@@ -7,8 +7,8 @@
 
 
 ## Contents
-1. [Introduce](## 🌱 청각장애인들을 위한 비대면 교육 플랫폼 개발)
-2. [Team](## Team)
+1. [Introduce](##🌱 청각장애인들을 위한 비대면 교육 플랫폼 개발)
+2. [Team](##Team)
 3. [Install](## Install)
 4. [Requirements](## Requirements)
 5. [Technology Stack](## Technology Stack)
