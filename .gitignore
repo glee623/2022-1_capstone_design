@@ -1,3 +1,4 @@
 images/
-yolov-4-obj.cfg
+yolov4-obj.cfg
 yolov4-obj_best.weights
+obj.names

@@ -12,12 +12,12 @@ signin_done_btn.addEventListener('click', () => {
         }
     }
 
-    if (isNaN(inputs[3].value)) {
-        alert('생년월일은 오직 숫자 형식만 가능합니다.');
-        inputs[3].value = '';
-        inputs[3].focus();
-        return;
-    }
+    // if (isNaN(inputs[3].value)) {
+    //     alert('생년월일은 오직 숫자 형식만 가능합니다.');
+    //     inputs[3].value = '';
+    //     inputs[3].focus();
+    //     return;
+    // }
 
     socket.emit("SignUp", {
         signId: inputs[0].value,

@@ -1,3 +1,4 @@
+import os
 from http import server
 import re
 from socket import socket
@@ -18,8 +19,9 @@ import numpy as np
 import io
 from PIL import Image
 from collections import deque
-
-# users = []
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 serverActive = False
 
@@ -38,11 +40,11 @@ final_word = None
 tmp_cnt = 0
 
 # YOLO 가중치 파일과 CFG 파일 로드
-YOLO_net = cv2.dnn.readNet("C:/Users/soeun/PycharmProjects/_sign-language-live-chat-main/yolov4-obj_best.weights",
-                           "C:/Users/soeun/PycharmProjects/_sign-language-live-chat-main/yolov4-obj.cfg")
+YOLO_net = cv2.dnn.readNet("./yolov4-obj_best.weights",
+                           "./yolov4-obj.cfg")
 
 # YOLO NETWORK 재구성
-with open("C:/Users/soeun/PycharmProjects/_sign-language-live-chat-main/obj.names", "r") as f:
+with open("./obj.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
 layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i - 1] for i in YOLO_net.getUnconnectedOutLayers()]
@@ -126,14 +128,14 @@ def userMessage(data,roomName):
 def signUp(data):
     # Check ID Exist
     status = 'NotExist'
-    with open('./database/user.csv','r',encoding='utf-8') as f:
+    with open('./static/database/user.csv','r',encoding='utf-8') as f:
         rdr = csv.reader(f)
         for line in rdr:
             if(line[0] == data['signId']):
                 emit('SignUpRes', 'IDExist', to=request.sid, include_self=True)
                 return
 
-    with open('./database/user.csv','a', encoding='utf-8', newline='') as f:
+    with open('./static/database/user.csv','a', encoding='utf-8', newline="\n") as f:
         wr = csv.writer(f)
         wr.writerow([data['signId'], data['signPw'], data['signName'], data['signBirth']])
     
@@ -143,11 +145,11 @@ def signUp(data):
 @socketio.on('SignIn')
 def signIn(data):
     # print(data)
-    with open('./database/user.csv','r',encoding='utf-8') as f:
+    with open('./static/database/user.csv','r',encoding='utf-8') as f:
         rdr = csv.reader(f)
         for line in rdr:
-            if(line[0] == data['signId'] and line[1] == data['signPw']):
-                emit('SignInRes', {'states':'Success', 'userId': data['signId'], 'userName':line[2]}, to=request.sid, include_self=True)
+            if(line[2] == data['signId'] and line[3] == data['signPw']):
+                emit('SignInRes', {'states':'Success', 'userId': data['signId'], 'userName':line[0]}, to=request.sid, include_self=True)
                 return
     emit('SignInRes', {'states':'Fail'}, to=request.sid, include_self=True)
     return
@@ -155,7 +157,7 @@ def signIn(data):
 @socketio.on('IDExist')
 def IDExist(id):
     status = 'NotExist'
-    with open('./database/user.csv','r',encoding='utf-8') as f:
+    with open('./static/database/user.csv','r',encoding='utf-8') as f:
         rdr = csv.reader(f)
 
         for line in rdr:
@@ -251,7 +253,7 @@ def signImage(data):
         pass
 
     # none_counter 개수가 5개보다 작을때 실행
-    if none_counter < 3:
+    if none_counter < 2:
         # final_output이 None이 아니고, 이전 output인 compare_class와
         # 현재 class인 final_output이 다를때 finger_queue에 추가
         if final_output is not None and compare_class != final_output:

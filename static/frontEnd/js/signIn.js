@@ -35,10 +35,15 @@ socket.on('SignInRes', (res) => {
         sessionStorage.setItem('userLogined', true);
         sessionStorage.setItem('LoginedID', res['userId']);
         sessionStorage.setItem('LoginedName', res['userName']);
+
+        const logined = document.getElementById('welcomeText');
+        logined.innerText = res['userName'] + '님 환영합니다.';
+
         sigin_in_div.hidden = true;
         location.reload();
     } else {
-        alert('아아디/비밀번호가 일치하지 않습니다.');
+        console.log(res) // TEST
+        alert('아이디/비밀번호가 일치하지 않습니다.');
     }
 });
 
@@ -46,10 +51,12 @@ socket.on('SignInRes', (res) => {
 window.onload = function() {
     const sigininup_div = document.getElementById('signInUpDiv');
     const logined_div = document.getElementById('logined');
-    
 
     if(sessionStorage.getItem('userLogined')) {
         sigininup_div.hidden = true;
         logined_div.hidden = false;
+
+        const logined = document.getElementById('welcomeText');
+        logined.innerText = sessionStorage.getItem('LoginedName') + '님 환영합니다.';
     }
 }
