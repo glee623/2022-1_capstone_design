@@ -4,7 +4,7 @@
 
 # 청각장애인들을 위한 비대면 교육 플랫폼 개발
 
-2022-1_capstone_design
+해당 프로젝트는 2022학년도 1학기 캡스톤 디자인 프로젝트 입니다.
 
 
 
@@ -39,11 +39,15 @@
 
 코로나 19 사태로 인해 대부분의 초·중·고교에서 대면 수업과 온라인 수업을 진행하고 있다. 일반적인 대학교의 온라인 강의는 ZOOM이나 학교 자체 동영상 강의 플랫폼을 활용한다. 그러나 비대면 수업은 대부분 강사의 입이 화면에 나타나지 않거나 강의자료만 표시된다. 장애인차별법 14조는 교육관리자가 수어통역, 문자통역, 자막 등 의사소통 수단을 적극 고안/제공하도록 규정하고 있지만, 시간과 비용상 어려움이 있어 이 같은 지원이 어렵다. 따라서 이번 캡스톤 프로젝트를 통해 **청각장애인을 위한 음성 및 수화 번역 교육 플랫폼**을 만드는 것을 목표로 하고 있다. 기술 개발은 크게 두 가지로 나뉜다.
 
+| <p align="center"><img src="./images/instructor_to_student.png" > | <p align="center"><img src="./images/student_to_instructor.png" > |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <center>강의자 to 청각장애인</center>                        | <center>강의자 to 청각장애인</center>                        |
 
 
-<img src="./images/instructor_to_student.png" width="30%"/>
 
-<img src="./images/student_to_instructor.png" width="30%"/>
+<p align="center"><img src="./images/instructor_to_student.png" width="30%"/>
+
+<p align="center"><img src="./images/student_to_instructor.png" width="30%"/>
 
 
 
@@ -163,7 +167,7 @@ conda install -c anaconda flask
 
 
 
-![데이터셋](./images/dataset_img.png)
+<p align="center"><img src="./images/dataset_img.png">
 
 
 
