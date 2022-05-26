@@ -240,7 +240,7 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 # Timetable
 
-이미지
+![일정](https://user-images.githubusercontent.com/52689918/170536139-7649f83a-36ce-49f0-85db-f04b58cd16e2.png)
 
 
 
