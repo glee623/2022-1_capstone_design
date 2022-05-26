@@ -236,7 +236,7 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 # WorkFlow
 
-<img src="./images/workflow.png" style="zoom:160%;" />
+<p align="center"><img src="./images/workflow.png" style="zoom:160%;" />
 
 # Timetable
 
@@ -250,7 +250,8 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 # Test document
 
-![](./images/test_report.png)
+<p align="center"><img src="./images/test_report.PNG" style="zoom:100%;" />
+
 
 
 
