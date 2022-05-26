@@ -44,13 +44,6 @@
 | <center>강의자 to 청각장애인</center>                        | <center>강의자 to 청각장애인</center>                        |
 
 
-
-<p align="center"><img src="./images/instructor_to_student.png" width="30%"/>
-
-<p align="center"><img src="./images/student_to_instructor.png" width="30%"/>
-
-
-
 1) 실시간 전송되는 강사의 음성이 텍스트로 변환되어 화면에 전송한다.
 2) 청각장애인의 수화를 텍스트로 변환해 화면에 전송한다. 
 
