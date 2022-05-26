@@ -1,0 +1,133 @@
+.rightBar {
+    background-color: white;
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+
+    box-shadow: -10px 0px 17px 0px #dfdfdf85;
+}
+
+#rightTopBar {
+    height: 60px;
+    width: 100%;
+    background-color: #34ba6e;
+}
+
+#chatBox {
+    width: 100%;
+    margin-bottom: 170px;
+    flex: 1;
+    overflow: auto;
+}
+
+#chatInputDiv {
+    margin-bottom: 70px;
+    border-top: 1px solid rgb(170, 170, 170);
+    height: 100px;
+    line-height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#chatForm > textarea {
+    height: 80px;
+    width: 280px;
+
+    margin: 5px;
+    resize: none;
+    padding: 5px;
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+#chatForm > textarea:focus {
+    outline: none;
+}
+
+#sendChat {
+    background-color: #34ba6e;
+    width: 92px;
+    height: 92px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+    line-height: 92px;
+    border: none;
+}
+
+#sendChat:hover {
+    cursor: pointer;
+    background-color: #288651;
+}
+
+.myChatBox {
+    width: 100%;
+    text-align: right;
+}
+
+.myChatBox > span {
+    display: inline-block;
+}
+
+.myChatBox > #myNameOnChat {
+    margin-right: 10px;
+}
+
+.myChatBox > #textArea{
+    background-color: #288651;
+    max-width: 280px;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+    word-break:break-all
+}
+
+.receiveChatBox {
+    width: 100%;
+    text-align: left;
+}
+
+.receiveChatBox > span {
+    display: inline-block;
+}
+
+.receiveChatBox > #myNameOnChat {
+    margin-left: 10px;
+}
+
+.receiveChatBox > #textArea{
+    background-color: rgb(92, 92, 221);
+    max-width: 90%;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.ttsBG {
+    background-color: rgb(55, 55, 185);
+}
+
+.statusMessage {
+    height: 25px;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    line-height: 25px;
+    margin: 5px 20px;
+    border-radius: 20px;
+}

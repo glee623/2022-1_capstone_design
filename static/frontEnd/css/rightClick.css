@@ -1,0 +1,29 @@
+.RightclickDiv {
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(223, 223, 223);
+    padding: 5px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.RightclickDiv > div {
+    margin-top: 10px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.RightclickDiv > div:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.RightclickDiv > select, option {
+    margin: 10px 10px 10px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+

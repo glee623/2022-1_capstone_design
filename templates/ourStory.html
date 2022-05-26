@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN | 수화를 위한 화상 플랫폼</title>
+
+    <!-- Local Style Sheet -->
+    <link rel="stylesheet" href="./static/frontEnd/css/style.css">
+    <link rel="stylesheet" href="./static/frontEnd/css/joinRoom.css">
+
+    <!-- SocketIO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="signDiv" id="signInUpDiv">
+        <div id="signIn">Sign In</div>
+        <div id="signUp" onclick="location.href='./signUp'">Sign Up</div>
+    </div>
+
+    <div class="signDiv signed" id="logined" hidden>
+        <a id="welcomeText">김강수님 환영합니다</a>
+        <div id="signOut">Sign Out</div>
+    </div>
+
+
+    <div class="topDiv" id="topDiv">
+        <a href="./" id="SIGNIMG"><img src="./static/frontEnd/images/mainLogo.png" alt="메인로고"></a>
+    </div>
+
+    <div class="slideDiv" id="slideDiv">
+        <div class="inner">
+            <div class="mainText" id="mainText">
+                <a>또 하나의 언어,</a> <img src="./static/frontEnd/images/TopRight_NEW.png" alt="topRight" width="150px"
+                    id="topRight"> <br>
+                <img src="./static/frontEnd/images/topLeft.png" alt="topLeft" width="120px" id="topLeft"> <a
+                    style="background-color: white; font-size: 3.5vw;">수어</a><br><br><br><br>
+                <a>몸짓으로</a><br>
+                <a>눈으로</a><br>
+                <img src="./static/frontEnd/images/botLeft.png" alt="botLeft" width="120px" id="botLeft">
+                <img src="./static/frontEnd/images/topLeft.png" alt="botRight" width="120px" id="botRight">
+                <a style="background-color: white;">소통하는 우리</a><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="articleDiv">
+        <div class="inner">
+            <!-- Article 1 -->
+            <div class="articleOne">
+                <div class="imgOne">
+                    <img src="./static/frontEnd/images/article/1.jpg" width="400px" alt="Monitor" id="monitorImg">
+                </div>
+                <p id="articleTitle">"온라인 강의에 청각장애인 학생 지원책 미흡" 인권위 진정</p>
+                <p id="articleValue">
+                    코로나19 우려로 각 대학이 온라인 강의로 수업을 대체하고 있는 가운데, 장애인 단체들이 청각장애인(농인) 학생들의 학습 환경 개선을 요구하며 국가인권위원회에 진정을
+                    냈다.<br><br>
+                    장애의 벽을 허무는 사람들·한국농아인협회 등 6개 단체는 20일 서울 중구 인권위 앞에서 기자회견을 열고 "모든 강의에 자막과 수어 통역을 의무 제공하도록 하는 지침을
+                    만들어달라"고
+                    교육부에 촉구했다.<br><br>
+                    이날 진정인으로 기자회견에 참석한 나사렛대학교 구윤호(21) 학생은 "학교에서 강의 영상에 자막을 삽입하고, 유튜브에 수어 통역을 올려주는 등 지원 노력을 하고
+                    있다"면서도 "자막 지원이 늦어 비장애 학생에 비해 진도가 뒤처진다"고 주장했다.
+                    <br>.<br>.<br>.<br>
+                    연합 뉴스 - 장우리 기자
+                </p>
+                <div class="designLiner"></div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="articleTwo">
+                <p id="articleTitle">"온라인 강의에 청각장애인 학생 지원책 미흡" 인권위 진정</p>
+                <div id="articleValue">
+                    코로나19로 온라인 비대면 교육이 활성화되고 있다. <br>
+                    하지만 디지털에 익숙한 비장애인과 달리 청각장애인에게 온라인 교육은 또 다른 장애다.<br>
+                    <br>
+                    일반학교 통합교육 환경에서 공부하는 청각장애 학생(78%)에게 <br>
+                    수어·자막 등 학습 지원이 되지 않아 청각장애 학생들은 교육의 사각지대에 방치되고 있다.<br>
+                    <br>
+                    EBS는 장애인 대상 홈페이지를 별도로 서비스하고 있다.<br>
+                    하지만 EBS 청각장애 강의는 대부분 자막만 제공된다.<br>
+                    수어는 평생교육의 24개 프로그램에만 있을 뿐이다.<br>
+                    청각장애 학생들은 학원 등 사교육 기회가 제한적이기 때문에<br>
+                    공교육이 제대로 이뤄지지 않으면 비장애 학생들과의 격차는 더 벌어질 수밖에 없다.<br>
+                    <br>
+                    .
+                    <br>
+                    .
+                    <br>
+                    .
+                    <br>
+                    한경 오피니언 - 임진이 <한국복지대 교수>
+                </div>
+                <img src="./static/frontEnd/images/article/2.jpg" alt="Monitor" width="500px">
+                <div class="designLiner"></div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="articleOne" style="margin-top: 60px;">
+                <div class="imgOne">
+                    <img src="./static/frontEnd/images/article/3.jpg" width="400px" alt="Monitor" id="monitorImg">
+                </div>
+                <p id="articleTitle" style="margin-top: -100px;">장애 학생 학습권 직격탄…"올해는 나아질까요"</p>
+                <p id="articleValue">
+                    <이은주 / 청각장애 학생 학부모> <br>
+                        "선생님들도 하고자 하는 열의가 있지만, 준비상황이 부족한 게 많이 있고 <br>
+                        1년 동안 많이 발전됐다고 생각을 안 하거든요. 쌍방향 수업하는 것도 몇 번 되지도 않았던 것 같고요. <br><br>
+
+                        장애 학생에게도 내실 있는 원격 수업을 보장하겠다, 지난해 교육부가 했던 약속입니다.<br><br>
+
+                        <유은혜 / 교육부 장관(지난해 4월)><br>
+                            "온라인 개학을 위해서 시청각 장애 학생에게는 원격 수업 자막이나 수어, 점자 등을 제공하고,<br>
+                            발달 장애 학생들에게는 다양한 형태의 원격 수업과 더불어서 방문 교육을 병행해서…"<br><br>
+
+                            그러나 장애 학생을 위한 온라인 학습 자료는 두 학기가 지나도록 제대로 마련되지 않았습니다.<br><br>
+
+                            시각 장애 학생을 위한 화면해설 자료도 중학 과정에선 지난해 단 한 건도 올라오지 않았습니다.<br>
+                            실제 교육부가 실시한 설문조사를 보면<br>
+                            특수학교 교사와 학생, 학부모들은 콘텐츠 부족을 원격 수업의 가장 큰 어려움으로 꼽았습니다.<br><br>
+
+                            .
+                            <br>
+                            .
+                            <br>
+                            .
+                            <br><br>
+                            연합뉴스 TV - 정인용, 방준혁 기자
+                </p>
+                <div class="designLiner"></div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="articleTwo">
+                <p id="articleTitle">"온라인 수업, 학습권 침해 당하는 장애대학생들"</p>
+                <div id="articleValue">
+                    코로나19 사태로 대학교 수업이 전격/일부 온라인화 되면서 문제가 더욱 불거졌다.<br>
+                    예를 들어, 영상으로 혼자 수강을 해야하는 청각장애 학생들은 자막이 필요하지만,<br>
+                    다수의 대학교에서는 그들에게 자동생성 자막을 사용하라는 공지가 전부였다.<br>
+                    자동생성 자막이 현재의 기술로는 내용 전달 면에 있어서 아직 턱 없이 부족하기 때문에<br>
+                    해당 청각장애 학생들의 학업에 방해가 될 수도 있다.<br>
+                    <br>
+                    .
+                    <br>
+                    .
+                    <br>
+
+                    한국은 사상 초유의 코로나19 사태에 전세계적으로 가장 빨리 대응한 국가가 되었지만,<br>
+                    장애학생들의 상황은 개선되지 못했다.<br>
+                    현재 시.청각장애학생들에게 제공되는 지원은 최소한에 불과하며,<br>
+                    몇개월에 걸쳐 지속된 끊임없는 항의에도 불구하고 정부는 아직까지도 별다른 성과를 보여주지 못하고 있다.<br>
+                    시간이 지체될 수록 장애학생들이 가장 기본적인 인권조차 보호받지 못한 채 보내는 날들만 늘어갈 뿐이다.<br>
+                    <br>
+                    .
+                    <br>
+                    .
+                    <br>
+                    <br>
+                    Amnesty PLUS - Steven Park & Bennie Ko & Spany Noh
+                </div>
+                <img src="./static/frontEnd/images/article/4.jpg" alt="Monitor" width="500px" style="margin-bottom: 300px;">
+                <div class="designLiner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="signInDiv" hidden>
+        <div class="signInDivInner alignCenter">
+            <div class="closeBtn" id="closeBtn"><i class="bi bi-x-lg"></i></div>
+            <a id="signInTitle">손으로 전하는 목소리, <strong>수어</strong></a>
+            <a id="signInTitle"><strong>SIGN과 함께 세상을 바꿔요.</strong></a>
+            <img src="./static/frontEnd/images/LogoRight_NEW.png" alt="Left leaf" width="50px">
+            <div style="height: 20px;"></div>
+            <input type="text" name="signID" id="signID" placeholder="아이디"><br>
+            <input type="password" name="signPW" id="signPW" placeholder="비밀번호"><br>
+            <div id="login_btn">SIGN IN</div><br>
+        </div>
+    </div>
+
+    <div class="joinRoomDiv">
+        <input type="text" id="joinRoomName" class="joinRoomName" placeholder="Room name">
+        <div class="joinRoomBtn" id="joinRoomBtn">SIGN</div>
+    </div>
+
+    <div class="userNameDiv" hidden>
+        <div class="userNameDivInner alignCenter">
+            <div class="closeBtn" id="closeBtnForName"><i class="bi bi-x-lg"></i></div>
+            <a id="inputUserNameTitle">사용자 이름 입력</a>
+            <a id="inputUserNameExplain">사용자 이름을 입력하셔야 SIGN 사용이 가능합니다.</a>
+            <input type="text" name="inputUserName" id="inputUserName">
+            <div id="submitUserName">제출</div>
+            <div style="height: 10px;"></div>
+        </div>
+    </div>
+
+    <div style="height: 200px; text-align: center; margin-top: 100px;">
+        <img src="./static/frontEnd/images/bottom_logo.png" alt="HALLYM Univ. LOGO" width="300px" id="bottomLogoImg">
+    </div>
+    <script src="./static/frontEnd/js/signIn.js"></script>
+    <script src="./static/frontEnd/js/joinRoom.js"></script>
+</body>
+
+</html>

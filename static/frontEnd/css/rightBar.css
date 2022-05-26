@@ -1,0 +1,245 @@
+/* MAIN TOP BAR */
+.rightBar {
+    background-color: white;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    display: flex;
+    box-shadow: -10px 0px 17px 0px #dfdfdf85;
+}
+
+/* Chat 상단 바 */
+.rbTopBar {
+    height: 50px;
+    background-color: #A7DE9A;
+    z-index: 10;
+    line-height: 45px;
+} 
+
+.closeBar > i {
+    margin-left: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.closeBar > i:hover {
+    cursor: pointer;
+    color: rgb(105, 189, 102);
+}
+
+.closeBar[id=open_bar] {
+    float: right;
+    margin-right: 20px;
+    z-index: 3;
+}
+
+#chatBox {
+    width: 100%;
+    margin-bottom: 145px;
+    flex: 1;
+    overflow: auto;
+}
+
+#attatch_div {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    padding: 0px 5px;
+}
+
+#attatch_div i {
+    font-size: 25px;
+    color: rgb(94, 94, 94);
+}
+
+#attatch_div i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+#chatInputDiv {
+    margin-bottom: 3px;
+    border-top: 1px solid rgb(170, 170, 170);
+    height: 100px;
+    /* line-height: 70px; */
+    width: 100%;
+    position: fixed;
+    bottom: 40px;
+}
+
+#chatForm > textarea {
+    height: 80px;
+    width: 14%;
+
+    margin: 5px;
+    resize: none;
+    padding: 5px;
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+#chatForm > textarea:focus {
+    outline: none;
+}
+
+#sendChat {
+    background-color: #34ba6e;
+    width: 4%;
+    height: 90px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+    line-height: 92px;
+    border: none;
+    font-size: 25px;
+}
+
+#sendChat:hover {
+    cursor: pointer;
+    background-color: #288651;
+}
+
+.myChatBox {
+    width: 100%;
+    text-align: right;
+    display: inline-block;
+}
+
+.myChatBox > span {
+    display: inline-block;
+}
+
+.myChatBox > #myNameOnChat {
+    margin-right: 10px;
+}
+
+#myFileSenderName {
+    margin-right: 10px;
+    text-align: right;
+    display: block;
+    margin-bottom: -20px;
+}
+
+#otherFileSenderName {
+    margin-left: 10px;
+    text-align: left;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.myChatBox > #textArea {
+    background-color: #288651;
+    max-width: 280px;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+    word-break:break-all;
+}
+
+.receiveChatBox {
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+}
+
+.receiveChatBox > span {
+    display: inline-block;
+}
+
+.receiveChatBox > #myNameOnChat {
+    margin-left: 10px;
+}
+
+.receiveChatBox > #textArea{
+    background-color: rgb(92, 92, 221);
+    /* width: fit-content; */
+    max-width: 90%;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.ttsBG {
+    background-color: rgb(55, 55, 185);
+}
+
+.statusMessage {
+    height: 25px;
+    margin: 10px 5%;
+    width: 90%;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    line-height: 25px;
+    /* margin: 5px 20px; */
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* File box */
+.fileMessage {
+    position: relative;
+    float: right;
+    margin: 10px;
+    width: 70%;
+    height: 60px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(128, 128, 128);
+    margin-bottom: 1px;
+}
+
+.other {
+    float: left;
+}
+
+.fileMessage > #fileName {
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.fileMessage > #size {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 90%;
+    color: rgb(99, 99, 99);
+}
+
+.fileMessage > .downloadBtn {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    right: 20px;
+    top: 15px;
+
+    line-height: 45px;
+    text-align: center;
+
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fileMessage > .downloadBtn:hover {
+    background-color: rgb(228, 228, 228);
+}

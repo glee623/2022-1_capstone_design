@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN | 회원가입</title>
+
+    <!-- Local Style Sheet -->
+    <link rel="stylesheet" href="./static/frontEnd/css/style.css">
+    <link rel="stylesheet" href="./static/frontEnd/css/signUp.css">
+
+     <!-- SocketIO -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+     integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+     crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="topDiv" id="topDiv">
+        <a href="./" id="SIGNTItle">SIGN<img src="./static/frontEnd/images/LogoRight.png" alt="LogoRight" width="60px"> </a>
+    </div>
+
+    <div class="signUpDiv">
+        <div class="inner">
+            <div class="signTopText">
+                <br>
+                <a id="welcome">어서오세요</a><br>
+                <a id="welcome"><span>SIGN</span>의 회원이 되신것을 환영합니다.</a>
+                <img src="./static/frontEnd/images/LogoRight.png" alt="LogoRight" width="80px">
+            </div>
+
+            <div class="formDiv">
+                <table>
+                    <tbody id="form_table_tbody">
+                        <tr>
+                            <td>이름</td>
+                            <td><input type="text" name="userName" id="userName" alt="이름" placeholder="김사인"></td>
+                        </tr>
+                        <tr>
+                            <td>생년월일</td>
+                            <td><input type="text" name="userBirth" id="userBirth" alt="생년월일" placeholder="000308"></td>
+                        </tr>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" name="userId" id="userId" alt="아이디" placeholder="singupforsign"></td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td><input type="password" name="userPw" id="userPw" alt="비밀번호" placeholder="Password"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div id="signin_done">가입하기</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 200px; text-align: center;">
+        <img src="./static/frontEnd/images/bottom_logo_2.png" alt="HALLYM Univ. LOGO" width="300px" id="bottomLogoImg">
+    </div>
+    <script src="./static/frontEnd/js/sign.js"></script>
+</body>
+
+</html>

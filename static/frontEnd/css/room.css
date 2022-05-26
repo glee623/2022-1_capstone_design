@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'AppleSDGothicNeoM00';
+    src: url('./fonts/AppleSDGothicNeoM.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AppleSDGothicNeoL00';
+    src: url('../fonts/AppleSDGothicNeoL.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    font-family: 'AppleSDGothicNeoL00';
+    margin: 0;
+    padding: 0;
+}
+
+html, body, main {
+    width: 100%;
+    height: 100%;
+}
+
+.topBar {
+    height: 50px;
+    width: 100%;
+    background-color: #A7DE9A;
+    z-index: 10;
+}
+
+.topBar > img {
+    margin: 5px;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* background-color: yellow; */
+    z-index: 1;
+}
+
+.userList {
+    width: 80%;
+    height: 100%;
+    float: left;
+
+    /* background-color: black; */
+    position: relative;
+    overflow: auto;
+}
+
+.userView {
+    margin: 20px;
+    height: 399px;
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+.userView > div {
+    display: inline-block;
+}
+
+.innerLeft {
+    margin: 30px;
+    float: left;
+}
+
+.videoDUMMY {
+    background-color: black;
+    width: 400px;
+    height: 300px;
+}
+
+.videoController {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+.userViewTable {
+    display: inline-block;
+    margin: 20px;
+    width: 97%;
+}
+
+/* 사용자 우측 STT/SIGN 화면 */
+.chatTD {
+    width: 100%;
+}
+
+.chat_td_inner {
+    height: 320px;
+    margin: 0px 10px;
+    margin-left: 30px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow: auto;
+}
+
+.chat_td_inner > .box {
+    display: inline-block;
+    /* height: 30px; */
+    width: fit-content;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.chat_td_inner > .stt {
+    background-color: rgb(62, 172, 62);
+}
+
+.chat_td_inner > .sign {
+    background-color: rgb(62, 106, 172);
+}
+
+.videoMuteStat, .audioMuteStat {
+    margin-left: 10px;
+    font-size: 28px;
+    color: rgb(94, 94, 94);
+}
+
+#myVideoStat > i:hover, #myAudioStat > i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+#myAudioStat > .bi-mic-mute-fill, #myVideoStat > .bi-camera-video-off-fill {
+    color: red;
+}
+
+.innerRight {
+    float: right;
+    width: 400px;
+    height: 340px;
+    border: 1px solid black;
+    margin: 30px;
+}
+
+.videoBgc {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+}
+
+#myName, .userName {
+    z-index: 10;
+    color: white;
+
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    padding: 5px;
+    background-color: rgba(68, 68, 68, 0.7);
+}
+
+video {
+    /* Video Flip */
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: -1;
+    height: 300px;
+}
+
+.closeBarDiv {
+    z-index: 100;
+    height: 30px;
+}
+
+#open_bar {
+    position: absolute;
+    top: 5px;
+    right: -10px;
+}

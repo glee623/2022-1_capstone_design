@@ -1,0 +1,367 @@
+/* FONTS */
+@font-face {
+    font-family: 'AppleSDGothicNeoM00';
+    src: url('./fonts/AppleSDGothicNeoM.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AppleSDGothicNeoEB00';
+    src: url('./fonts/AppleSDGothicNeoEB.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* UNIVERSAL */
+* {
+    font-family: 'AppleSDGothicNeoM00';
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+html, body {
+    height: 100%;
+}
+
+.inner {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.alignCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* SIGN DIV */
+.signDiv {
+    position: fixed;
+    width: 400px;
+    height: 130px;
+    right: 20%;
+    top: 30px;
+    text-align: center;
+    line-height: 100px;
+    z-index: 10;
+}
+
+.signed {
+    position: absolute;
+    width: fit-content;
+}
+
+.signDiv > div {
+    width: 156px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+
+    border: 4px solid #A6DE99;
+    border-radius: 23px;
+
+    font-size: 25px;
+    line-height: 40px;
+
+    background-color: #fff;
+
+    box-shadow: 0px 0px 40px rgba(104, 104, 104, 0.233);
+}
+
+.signDiv > div:hover {
+    cursor: pointer;
+    background-color: #e9f3e7;
+    padding: 4px;
+    transition: all 0.2s;
+}
+
+.signDiv > #signIn {
+    margin-right: 20px;
+}
+
+.signDiv > #welcomeText {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+/* SIGNIN DIV */
+.signInDiv {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(146, 146, 146, 0.4);
+    z-index: 10;
+}
+
+.signInDivInner {
+    width: 420px;
+    height: 320px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    border: 4px solid #A6DE99;
+    text-align: center;
+}
+
+#signInTitle:first-of-type {
+    margin-top: 30px;
+}
+
+#signInTitle {
+    display: block;
+    font-size: 25px;
+    text-align: center;
+}
+
+.signInDivInner > input, .signInDivInner > #login_btn {
+    height: 40px;
+    width: 300px;
+    margin-top: 10px;
+    padding-left: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.signInDivInner > #login_btn {
+    /* background-color: #A6DE99; */
+    border: 3px solid #A6DE99;
+    line-height: 45px;
+    height: 40px;
+}
+
+.signInDivInner > #login_btn:hover {
+    background-color: #e9f3e7;
+    cursor: pointer;
+    padding: 0px 10px;
+    transition: all 0.2s;
+}
+
+.signInDivInner > img {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+} 
+
+.closeBtn {
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 10px;
+}
+
+.closeBtn:hover {
+    color:rgba(104, 104, 104, 0.233);
+    cursor: pointer;
+}
+
+/* TOP DIV */
+.topDiv {
+    height: 170px;
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#SIGNIMG {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 40px;
+}
+
+#SIGNIMG > img {
+    width: 220px;
+}
+
+#SIGNTItle {
+    line-height: 180px;
+    font-size: 70px;
+    text-decoration: none;
+    color: black;
+    font-family: 'AppleSDGothicNeoEB00';
+}
+
+.slideDiv {
+    background-color: #4BBC307D;
+    /* padding-top: 13vw; */
+}
+
+.mainText {
+    padding: 150px 0px;
+}
+
+.slideDiv .mainText a {
+    font-size: 3vw;
+}
+
+.articleDiv {
+    height: fit-content;
+    width: 100%;
+}
+
+.imgOne {
+    padding: 20px 0px;
+    width: 100%;
+    text-align: right;
+}
+
+.imgTwo {
+    margin-top: -200px;
+    width: 100%;
+    height: 300px;
+    text-align: left;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+#monitorImg {
+    display: inline;
+    margin-right: 100px;
+}
+
+.articleDiv #articleTitle {
+    font-weight: 1000;
+    font-size: 2vw;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.articleDiv  #articleValue {
+    font-size: 1.5vw;
+    text-align: left;
+    word-break:break-all;
+    z-index: 10;
+}
+
+.articleTwo {
+    margin-top: 150px;
+    position: relative;
+}
+
+.articleTwo > #articleTitle {
+    display: block;
+    text-align: right;
+}
+
+.articleTwo > #articleValue {
+    display: block;
+    text-align: right;
+}
+
+.designLiner {
+    position: absolute;
+    height: 18px;
+    width: 60%;
+    background-color: #4BBC307D;
+    margin-top: 40px;
+}
+
+.articleOne > .designLiner {
+    left: -30px;
+}
+
+.articleTwo > .designLiner {
+    right: 0;
+}
+
+.articleTwo > img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* MAIN Images */
+.slideDiv > .inner > .mainText {
+    position: relative;
+}
+
+.slideDiv > .inner > .mainText > img {
+    z-index: -11;
+}
+
+#topRight {
+    position: absolute;
+    transform: scaleX(-1);
+    top: 70px;
+}
+
+#topLeft {
+    position: absolute;
+    transform: scaleX(-1);
+    margin-left: -300px;
+}
+
+#botRight {
+    position: absolute;
+    margin-left: 350px;
+}
+
+#botLeft {
+    position: absolute;
+    margin-left: -150px;
+}
+
+/* Join room user name */
+.userNameDiv {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(146, 146, 146, 0.4);
+    z-index: 10;
+}
+
+.userNameDivInner {
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    border: 4px solid #A6DE99;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.userNameDivInner > #inputUserNameTitle {
+    display: block;
+    font-size: 40px;
+    text-align: center;
+}
+
+.userNameDivInner > #inputUserNameExplain {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}
+
+.userNameDivInner > input {
+    display: inline-block;
+}
+
+.userNameDivInner > #inputUserName {
+    width: 78%;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 25px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.userNameDivInner > #submitUserName {
+    width: 14%;
+    height: 35px;
+    display: inline-block;
+    background-color: #fff;
+    border: 4px solid #A6DE99;
+    line-height: 40px;
+    border-radius: 10px;
+}
+
+.userNameDivInner > #submitUserName:hover {
+    cursor: pointer;
+}

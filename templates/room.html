@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN 123 | 채팅방</title>
+
+    <!-- Lcoal css -->
+    <link rel="stylesheet" href="./static/frontEnd/css/room.css">
+    <link rel="stylesheet" href="./static/frontEnd/css/rightBar.css">
+    <link rel="stylesheet" href="./static/frontEnd/css/rightClick.css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- BootStrap ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- SocketIO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="topBar">
+        <img src="../static/frontEnd/images/LogoRight.png" alt="MainLogo" width="30px">
+    </div>
+
+    <main>
+        <div class="userList" id="call">
+            <div style="height: 50px;"></div>
+
+            <div class="userView" id="myView">
+                <table class="userViewTable">
+                    <tbody>
+                        <tr>
+                            <td class="videoTD">
+                                <div class="videoBgc">
+                                    <div id="myName">김강수</div>
+                                    <video id="myFace" autoplay playsinline muted width="400"></video>
+                                </div>
+
+                                <div class="videoController">
+                                    <a class="videoMuteStat" id="myVideoStat"><i
+                                            class="bi bi-camera-video-fill"></i></a>
+                                    <a class="audioMuteStat" id="myAudioStat"><i class="bi bi-mic-fill"></i></a>
+                                </div>
+                            </td>
+                            <td class="chatTD">
+                                <div class="chat_td_inner" id="my_view_inner_chat">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Others video view -->
+            <div class="userView" id="newUserCloneDiv" hidden>
+                <table class="userViewTable">
+                    <tbody>
+                        <tr>
+                            <td class="videoTD">
+                                <div class="videoBgc">
+                                    <div class="userName"><a id="userMicStatus" style="color: #00ff95;"> <i
+                                                class="bi bi-mic-fill"></i></a></div>
+                                    <video class="peerFace" id="asdsadadad" autoplay playsinline></video>
+                                </div>
+                            </td>
+                            <td class="chatTD">
+                                <div class="chat_td_inner">
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="imgDiv" hidden>
+                <canvas id="canvas" hidden></canvas>
+                <img id="photo" width="400" height="300">
+            </div>
+        </div>
+
+        <!-- Chat DIV -->
+        <div class="rightBar" id="rightBar">
+            <div class="rbTopBar">
+                <a class="closeBar" id="close_bar" onclick="closeBarToggle()"><i class="bi bi-list"></i></a>
+            </div>
+
+            <div id="chatBox">
+                <div style="height: 10px"></div>
+                <!-- 
+                <div class="myChatBox">
+                    <span id="myNameOnChat">김강수</span><br>
+                    <span id="textArea">안녕</span>
+                </div>
+
+                <div class="receiveChatBox">
+                    <span id="myNameOnChat">김강수</span><br>
+                    <span id="textArea">안녕</span>
+                </div>
+
+                <div class="fileMessage">
+                    <a id="fileName">ABC.txt</a><br>
+                    <a id="size">Size 10 MB</a>
+                    <div class="downloadBtn"><i class="bi bi-download"></i></div>
+                </div>
+
+                <div class="statusMessage">김강수님이 들어왔습니다.</div> 
+                -->
+            </div>
+
+            <div id="chatInputDiv">
+                <div id="attatch_div">
+                    <a id="toggleSpeach" hidden><i class="bi bi-megaphone"></i></a>
+                    <a id="sendFile"><i class="bi bi-paperclip"></i></a>
+                    <input type="file" name="uploadFile" id="uploadFile" hidden>
+                </div>
+                <form id="chatForm">
+                    <textarea name="userChat" id="userChat" cols="30" rows="6"></textarea>
+                    <input type="submit" id="sendChat" value="전송">
+                </form>
+            </div>
+        </div>
+        <a class="closeBar" id="open_bar" onclick="closeBarToggle()" hidden><i class="bi bi-list"></i></a>
+
+        <div class="RightclickDiv" id="right_click_camera" hidden>
+            <div id="RC_Camera_muteClick" onclick="handleCameraClick()">카메라 끄기</div>
+            <div id="RC_sign_toggle" onclick="signToggle(this)">수화 인식 켜기</div>
+            <select id="cameras"></select>
+        </div>
+
+        <div class="RightclickDiv" id="right_click_audio" hidden>
+            <div id="RC_audio_muteClick" onclick="handleMuteClick()">마이크 음소거</div>
+            <div id="RC_stt_toggle" onclick="sttToggle(this)">음성인식 켜기</div>
+            <select id="audios"></select>
+        </div>
+    </main>
+
+    <script src="./static/frontEnd/js/room.js"></script>
+    <script src="./static/frontEnd/js/chats.js"></script>
+    <script src="./static/frontEnd/js/tts.js"></script>
+    <script src="./static/frontEnd/js/handler.js"></script>
+    <script src="./static/frontEnd/js/sendFiles.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+.articleOne {
+    height: fit-content;
+} 
+
+/* 
+.aOLeft {
+    text-align: left;
+    height: 100%;
+    display: inline-block;
+    width: 29%;
+    border: 1px solid black;
+}
+*/
+
+.aORight {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+} 
+
+.aORight > div {
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    left: 10px;
+    top: 140px;
+}
+
+.aORight > div > #mainTitle {
+    font-size: 2.5vw;
+}
+
+.aORight > div > #subTitle {
+    font-size: 1.5vw;
+}
+
+.aORight > div > img {
+    float:none;
+}
+
+#startNow, #readNow {
+    border: 1px solid black;
+    padding: 15px 20px;
+    display: inline-block;
+    border: 4px solid #A6DE99;
+    border-radius: 10px;
+    font-size: 25px;
+    margin: 20px;
+    transition: all 0.2s;
+}
+
+#startNow:hover, #readNow:hover{
+    background-color: #e9f3e7;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 15px 40px;
+    margin-left: 0px;
+}
+
+.articleOne > .aORight > img {
+    display: inline-block;
+    width: 65%;
+    float: right;
+}
+
+.articleTwo > .aORight > div {
+    float: right;
+}
+
+.articleTwo > .aORight > img {
+    display: inline-block;
+    width: 45%;
+    float: right;
+    margin-right: 10%;
+}
+
+#writeImg {
+    display: inline-block;
+    width: 65%;
+    float: left;
+}
+
+#bottomLogoImg  {
+    margin: 0 auto;
+    bottom: 20px;
+}
+
+#vMonitor {
+    transform: scaleX(-1);
+}
+
+.rightInner {
+    top: 150px;
+    width: 100%;
+    position: absolute;
+    text-align: right;
+}
+
+#mainTitle {
+    font-size: 2vw;
+}
+
+#subTitle {
+    font-size: 1.5vw;
+}
+
+#rightMain {
+    position: absolute;
+    width: 100px;
+    right: -60px;
+    top: 60px;
+}
+
+#leftLeaf {
+    position: absolute;
+    width: 100px;
+    left: 50px;
+    top: 100px;
+}
+
+#leftLeaf2 {
+    position: absolute;
+    width: 100px;
+    left: 250px;
+    bottom: 70px;
+    transform: scaleX(-1);
+}

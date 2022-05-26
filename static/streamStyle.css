@@ -1,0 +1,110 @@
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #34ba6e;
+    height: 60px;
+    width: 100%;
+}
+
+#topTitle {
+    font-size: 30px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 30px; 
+    color: white;
+}
+
+#welcome {
+    height: 500px;
+    width: 100%;
+    margin-top: 100px;
+    line-height: 500px;
+    text-align: center;
+}
+
+#welcome > form > input {
+    font-size: 30px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+}
+
+#welcome > form > button {
+    font-size: 30px;
+    height: 55px;
+    width: 100px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* User peerFace */
+.peerFace {
+    width: 400px;
+}
+
+.footBar {
+    position: absolute;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    bottom: 0px;
+}
+
+.bottomBtn {
+    padding-top: 6px;
+    width: 60px;
+    height: 70px;
+    display: inline-block;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+#mute > i:hover {
+    color: rgb(129, 129, 129);
+    cursor: pointer;
+}
+
+#camera > i:hover {
+    color: rgb(129, 129, 129);
+    cursor: pointer;
+}
+
+.videoBgc {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+}
+
+#myName, .userName {
+    z-index: 10;
+    color: white;
+
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    padding: 5px;
+    background-color: rgba(68, 68, 68, 0.7);
+}
+
+video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: -1;
+
+    height: 300px;
+}
+
+#myStream {
+    display: inline-block;
+}
