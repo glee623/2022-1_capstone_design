@@ -82,38 +82,6 @@
 # Install
 
 ```python
-from http import server
-import re
-from socket import socket
-from flask import Flask,render_template,request  # 서버 구현을 위한 Flask 객체 import 
-
-from numpy import broadcast  
-
-from pyngrok import ngrok ,conf # 외부 접속 링크 생성
-from flask_socketio import SocketIO, join_room, emit
-import base64
-import cv2
-import numpy as np
-import io
-from PIL import Image
-from collections import deque
-
-import logging
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR) 
-
-from requests import request
-
-import timeit
-import time
-from unicode import join_jamos
-import cProfile
-import re
-```
-
-
-
-```python
 conda install -c conda-forge pyngrok  
 conda install -c conda-forge flask-socketio  
 conda install -c anaconda flask  
