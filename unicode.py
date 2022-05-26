@@ -266,10 +266,3 @@ def join_jamos(s, ignore_err=True):
     if queue:
         new_string += flush()
     return new_string
-
-
-# print(join_jamos("ㅇㅏㄴㄴㅕㅇㅎㅏㅅㅔㅇㅛ"))
-# print(join_jamos("ㅈㅓㄴㅡㄴ"))
-# print(join_jamos("ㅇㅣㅇㅖㅈㅣㄴㅇㅣㅂㄴㅣㄷㅏ"))
-
-# print(split_syllables("안녕하세요저는이예진입니다"))

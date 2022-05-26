@@ -81,7 +81,7 @@
 
 # Install
 
-```
+```python
 from http import server
 import re
 from socket import socket
@@ -113,7 +113,7 @@ import re
 
 
 
-```
+```python
 conda install -c conda-forge pyngrok  
 conda install -c conda-forge flask-socketio  
 conda install -c anaconda flask  
@@ -139,11 +139,9 @@ conda install -c anaconda flask
 
 # Technology Stack
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/><img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/><img src="https://img.shields.io/badge/socket.io-010101?style=flat-square&logo=socket.io&logoColor=white"/><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/><img src="https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=WebRTC&logoColor=white"/><img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/>
 
-## Library
 
-<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/> <img src="https://img.shields.io/badge/socket.io-010101?style=flat-square&logo=socket.io&logoColor=white"/> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=WebRTC&logoColor=white"/> <img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/>
 
 ## API
 
@@ -169,11 +167,7 @@ conda install -c anaconda flask
 
 Darknet YOLOv4 사용
 
-
-
-## Training
-
-설명<br>
+--> 삭제
 
 
 
@@ -181,7 +175,9 @@ Darknet YOLOv4 사용
 
 ![성능](./images/perform.png)
 
+## Training
 
+YOLO 모델의 결과로 class 번호를 얻고, 해당 클래스 번호를 사전에 미리 정의해둔 자음 모음 딕셔너리를 통해 검출된 class 번호를 한글 string 값으로 변환한다. 해당 프로젝트는 단순히 자음 모음 출력값을 얻는 것이 아닌, 검출된 자음 모음을 모아 하나의 단어로 표현해야 하기 때문에 비어있는 큐를 만들어주고 검출된 자음 모음 값을 append 해 주어 한 단어에 사용되는 자음 모음이 하나의 큐에 담기도록 구성하였다. YOLO 모델 같은 경우 실시간으로 사진에 대한 output을 출력하고 있기 때문에 동일한 output이 계속 append 되는 문제가 생기는데, 조건값을 주어 연속되는 자음, 모음 값을 1개만 append 해주는 처리를 해주었다. None이 출력될 때를 count 하는 변수를 두어서 None 값이 3개가 출력되는 경우 자음 모음 큐를 하나의 list로 만들고 후처리를 통하여 자음 모음 list를 하나의 단어로 구성하였다. 단어가 구성된 후에는 기존 큐를 빈 큐로 새로 할당해 주고 새로운 검출을 시작하게 된다.
 
 # Full Stack
 
