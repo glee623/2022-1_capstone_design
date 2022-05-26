@@ -10,28 +10,28 @@
 
 ## Contents
 1. [Introduce](#🌱_청각장애인들을_위한_비대면_교육_플랫폼_개발)
-1. [Differentiation](#Differentiation)
-2. [Team](#Team)
-3. [Install](#Install)
-4. [Requirements](#Requirements)
-5. [Technology Stack](#Technology_Stack)
-6. [Deep Learning](#DeepLearning-Model)
+2. [Differentiation](#Differentiation)
+3. [Team](#Team)
+4. [Install](#Install)
+5. [Requirements](#Requirements)
+6. [Technology Stack](#Technology_Stack)
+7. [Deep Learning](#DeepLearning-Model)
     - [Custom dataset](#Custom_dataset)
     - [Model & Hyper Parameters](#Model_&_Hyper_Parameters)
     - [Training](#Training)
     - [Result](#Result)
-4. [FullStack](#Full_Stack)
+8. [FullStack](#Full_Stack)
     - [Front-End](#Front-End)
     - [Back-End](#Back-End)     
-8. [Demonstration](#Demonstration )
+9. [Demonstration](#Demonstration )
    - [Main-Page](#Main-Page)
    - [Sub-Page](#Sub-Page)     
    - [Sign In & Sign Up](#Sign_In_&_Sign_Up)
    - [Live - Chat Room](#Live_-_Chat_Room)   
-9. [Timetable](#Timetable)
-10. [Design  document](#Design_document)     
-11. [Test document](#Test_document)
-12. [Weekly work Report](#Weekly_work_Report)   
+10. [WorkFlow](#WorkFlow)
+11. [Timetable](#Timetable)
+12. [Test document](#Test_document)
+13. [Weekly work Report](#Weekly_work_Report)   
 
 
 
@@ -48,7 +48,7 @@
 1) 실시간 전송되는 강사의 음성이 텍스트로 변환되어 화면에 전송한다.
 2) 청각장애인의 수화를 텍스트로 변환해 화면에 전송한다. 
 
-이 기술들은 STT API를 사용하고(1) 객체 감지를 위해 직접 구축한 수화 데이터 세트와 Darknet YOLOv4를 사용하여 구현된다(2). 이를 통해 **강의자와 청각장애인, 청각장애인과 강의자가 원활한 의사소통이 되도록 하는 것**을 ~~수정~~
+이 기술들은 STT API를 사용하고(1) 객체 감지를 위해 직접 구축한 수화 데이터 세트와 Darknet YOLOv4를 사용하여 구현된다(2). 이를 통해 **강의자와 청각장애인, 청각장애인과 강의자가 원활한 의사소통**이 되도록 한다.
 
 
 
@@ -107,7 +107,7 @@ conda install -c anaconda flask
 
 # Technology Stack
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/><img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/><img src="https://img.shields.io/badge/socket.io-010101?style=flat-square&logo=socket.io&logoColor=white"/><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/><img src="https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=WebRTC&logoColor=white"/><img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/><img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/><img src="https://img.shields.io/badge/socket.io-010101?style=flat-square&logo=socket.io&logoColor=white"/><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/><img src="https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=WebRTC&logoColor=white"/><img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/><img src="https://img.shields.io/badge/nvidia-76B900?style=flat-square&logo=nvidia&logoColor=white"/><img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=OpenCV&logoColor=white"/>
 
 
 
@@ -117,11 +117,13 @@ conda install -c anaconda flask
 
 
 
+
+
 # Deep Learning
 
 ## Custom dataset
 
-[custom dataset 구축](https://github.com/yetniek/2022-1_capstone_design/tree/main/dataset_codes) 
+More Details [custom dataset 구축](https://github.com/yetniek/2022-1_capstone_design/tree/main/dataset_codes) 
 
 데이터 셋은 한국어 수화의 자음 14개, 모음 17개로 총 31개의 글자를 한 사람 당 50장씩 약 1,550장을 구축하였다. 총 다섯명의 인원이 데이터 셋을 수집하였고 data augmentation을 활용해 이미지를 약 3배 정도 늘려 **총 23,250장** 의 데이터셋을 구축하였다. 또한, Vott를 활용하여 직접 라벨링 하였는데, 추가적인 데이터 셋을 구축할 때 Vott를 활용할 시 시간 소모가 커 라벨링을 자동화 시키기 위해 MediaPipe를 통해 손 부분에 바운딩 박스를 그려 마우스 클릭 시 해당 좌표를 저장하도록 설정해 데이터 라벨링을 진행하였다. 
 
@@ -130,22 +132,19 @@ conda install -c anaconda flask
 <p align="center"><img src="./images/dataset_img.png">
 
 
-
-## Model & Hyper Parameters 
-
-Darknet YOLOv4 사용
-
---> 삭제
-
-
-
 ## Result
 
 ![성능](./images/perform.png)
 
+
+
 ## Training
 
 YOLO 모델의 결과로 class 번호를 얻고, 해당 클래스 번호를 사전에 미리 정의해둔 자음 모음 딕셔너리를 통해 검출된 class 번호를 한글 string 값으로 변환한다. 해당 프로젝트는 단순히 자음 모음 출력값을 얻는 것이 아닌, 검출된 자음 모음을 모아 하나의 단어로 표현해야 하기 때문에 비어있는 큐를 만들어주고 검출된 자음 모음 값을 append 해 주어 한 단어에 사용되는 자음 모음이 하나의 큐에 담기도록 구성하였다. YOLO 모델 같은 경우 실시간으로 사진에 대한 output을 출력하고 있기 때문에 동일한 output이 계속 append 되는 문제가 생기는데, 조건값을 주어 연속되는 자음, 모음 값을 1개만 append 해주는 처리를 해주었다. None이 출력될 때를 count 하는 변수를 두어서 None 값이 3개가 출력되는 경우 자음 모음 큐를 하나의 list로 만들고 후처리를 통하여 자음 모음 list를 하나의 단어로 구성하였다. 단어가 구성된 후에는 기존 큐를 빈 큐로 새로 할당해 주고 새로운 검출을 시작하게 된다.
+
+
+
+
 
 # Full Stack
 
@@ -162,6 +161,8 @@ Socket.io와 WebRTC를 이용한 p2p 기반 실시간 화상 채팅 서비스를
 SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동을 위해 Python의 Flask 라이브러리와 Flask-socketio를 통해 Back-end를 구현하였다. Flask를 통해 Local 서버를 구현하고 Flask-socketio를 통해 Front-end와 Back-end와의 통신을 가능하게 하였다. 이후 기존의 Local 에서만 접속이 가능하던 한계를 보완하기 위해 ngrok를 이용하여 Local이 아닌 다른 PC 혹은 모바일 기기 에서도 접속이 가능하도록 구현하였다.
 
 <br>
+
+
 
 
 
@@ -221,7 +222,21 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 <br>
 
+### - Details
 
+**카메라 옆 번역 box** : 해당 box는 음성 STT 번역 결과를 초록색 대화창으로, 수화 번역 결과를 보라색 대화창으로 출력한다.
+
+**카메라 버튼 우클릭** : 수화 번역 기능을 on/off 할 수 있다.
+
+**마이크 버튼 우클릭** : STT 기능(음성 자막기능)을 on/off 할 수 있다.
+
+**채팅** : 채팅창을 통해 메세지를 보내고 받을 수 있으며 파일 전송또한 가능하다.
+
+
+
+# WorkFlow
+
+<img src="./images/workflow.png" style="zoom:160%;" />
 
 # Timetable
 
@@ -229,19 +244,16 @@ SIGN의 Back-end는 Python을 기반으로 구현된 deep-learning과의 연동�
 
 
 
-# Design document
 
-이미지
 
 
 
 # Test document
 
-이미지
+![](./images/test_report.png)
 
 
 
 # Weekly work Report
 
-이미지
-
+[Report Link](https://github.com/glee623/2022-1_capstone_design/tree/main/docs/weekly_report)
